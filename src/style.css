@@ -1,0 +1,112 @@
+
+.container {
+    background-image: url(https://img.freepik.com/free-photo/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1092.jpg?w=1380&t=st=1696160466~exp=1696161066~hmac=3e8c1ca875591e1c930ef4b220f0590cc941ece0786c3f07f82f845bd8f2616c);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+
+}
+
+h1,h2,h3 {
+font-family: 'Montserrat', sans-serif;
+}
+
+#btnsearch {
+    position: relative;
+    left: 420px;
+    bottom: 55px;
+    /* background-color: #151761;
+    border-color: #151761; */
+    
+}
+
+#search-location {
+    position: relative;
+    left: 420px;
+    bottom: 55px;
+    font-weight: 300;
+    /* background-color: #151761;
+    border-color: #151761;  */
+}
+
+.bigicon {
+    display: block;
+    margin: 0 auto;
+}
+
+.city {
+    text-align: center;
+    font-weight: 800;
+    font-size: 80px;
+}
+
+.datetime {
+    text-align: center;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.current {
+    text-align: center;
+    font-size: 55px;
+    font-weight: 800;
+}
+
+.maxmin {
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.col-2 {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    background-color: rgb(214, 231, 236,0.4);
+   
+}
+
+.day {
+    font-size: 40px;
+    margin-top: 5px;
+}    
+
+.info  {
+    margin-top: 130px;
+    font-size: 27px;
+}
+
+.fcbtn {
+    position: relative;
+    top: 125px;
+
+}
+
+/* #celsius {
+    background-color: white;
+    border-color: #151761;
+    color: #151761
+}
+
+
+#faren {
+    background-color: #151761;
+    border-color: #151761;
+} */
+
+/* .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #151761;
+    --bs-btn-border-color: #151761;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0b5ed7;
+    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0a58ca;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+} */
