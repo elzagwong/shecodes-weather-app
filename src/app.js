@@ -37,38 +37,7 @@ function changeUnitC(event) {
   mainMaxMin.innerHTML = "28°/14°";
   let realTemp = document.querySelector("#real-temp");
   realTemp.innerHTML = "22°C";
-  
-  let day1Temp = document.querySelector("#day1-temp");
-  day1Temp.innerHTML = "21°";
-  let day1MaxMin = document.querySelector("#day1-maxmin");
-  day1MaxMin.innerHTML = "25°/16°";
-  
-  let day2Temp = document.querySelector("#day2-temp");
-  day2Temp.innerHTML = "21°";
-  let day2MaxMin = document.querySelector("#day2-maxmin");
-  day2MaxMin.innerHTML = "25°/16°";
 
-  let day3Temp = document.querySelector("#day3-temp");
-  day3Temp.innerHTML = "21°";
-  let day3MaxMin = document.querySelector("#day3-maxmin");
-  day3MaxMin.innerHTML = "25°/16°";
-
-  let day4Temp = document.querySelector("#day4-temp");
-  day4Temp.innerHTML = "21°";
-  let day4MaxMin = document.querySelector("#day4-maxmin");
-  day4MaxMin.innerHTML = "25°/16°";
-  
-  let day5Temp = document.querySelector("#day5-temp");
-  day5Temp.innerHTML = "21°";
-  let day5MaxMin = document.querySelector("#day5-maxmin");
-  day5MaxMin.innerHTML = "25°/16°";
-
-  let day6Temp = document.querySelector("#day6-temp");
-  day6Temp.innerHTML = "21°";
-  let day6MaxMin = document.querySelector("#day6-maxmin");
-  day6MaxMin.innerHTML = "25°/16°";
-
-  
 }
 
 function changeUnitF(event) {
@@ -91,36 +60,6 @@ function changeUnitF(event) {
   let realTemp = document.querySelector("#real-temp");
   realTemp.innerHTML = "72°F";
 
-  let day1Temp = document.querySelector("#day1-temp");
-  day1Temp.innerHTML = "70°";
-  let day1MaxMin = document.querySelector("#day1-maxmin");
-  day1MaxMin.innerHTML = "77°/61°";
-  
-  let day2Temp = document.querySelector("#day2-temp");
-  day2Temp.innerHTML = "70°";
-  let day2MaxMin = document.querySelector("#day2-maxmin");
-  day2MaxMin.innerHTML = "77°/61°";
-
-  let day3Temp = document.querySelector("#day3-temp");
-  day3Temp.innerHTML = "70°";
-  let day3MaxMin = document.querySelector("#day3-maxmin");
-  day3MaxMin.innerHTML = "77°/61°";
-
-  let day4Temp = document.querySelector("#day4-temp");
-  day4Temp.innerHTML = "70°";
-  let day4MaxMin = document.querySelector("#day4-maxmin");
-  day4MaxMin.innerHTML = "77°/61°";
-
-  let day5Temp = document.querySelector("#day5-temp");
-  day5Temp.innerHTML = "70°";
-  let day5MaxMin = document.querySelector("#day5-maxmin");
-  day5MaxMin.innerHTML = "77°/61°";
-
-  let day6Temp = document.querySelector("#day6-temp");
-  day6Temp.innerHTML = "70°";
-  let day6MaxMin = document.querySelector("#day6-maxmin");
-  day6MaxMin.innerHTML = "77°/61°";
-  
 }
 
 
