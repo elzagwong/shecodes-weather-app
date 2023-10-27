@@ -15,55 +15,56 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-4 mx-auto">
-                <form id="search-form">
-                    <div class="mb-3">
-                    <!-- <label for="exampleInputEmail1" class="form-label">Location</label> -->
-                    <input type="text" class="form-control" id="inputCity" placeholder="Enter City.." >
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="btnsearch">Search🔎</button>
-                    <button type="button" class="btn btn-primary" id="search-location"><i class="fa fa-location-crosshairs"></i></button>
-                </form>
-                
+    <div class="container-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 mx-auto">
+                    <form id="search-form">
+                        <div class="mb-3">
+                        <!-- <label for="exampleInputEmail1" class="form-label">Location</label> -->
+                        <input type="text" class="form-control" id="inputCity" placeholder="Enter City.." >
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btnsearch">Search🔎</button>
+                        <button type="button" class="btn btn-primary" id="search-location"><i class="fa fa-location-crosshairs"></i></button>
+                    </form>
+                    
+                </div>  
             </div>  
-        </div>  
-        <div class="row">
-            <div class="col-4">
-                <img src="img/sunny.png" alt="" width="200" height="200" class="bigicon">
-            </div>
-            <div class="col-4">
-                <h1 class="city" id="search-input-city">
-                    Rome 
-                </h1>
-                <h2 class="datetime" id="h2date-time">
-                    Sunday 11:27
-                </h2>
-                <h2 class="current" id="main-current-temp">
-                    21°C
-                </h2>
-                <h3 class="maxmin" id="main-maxmin">
-                    <span id="current-max">28°</span>/<span id="current-min">14°</span>
-                </h3>
-            </div>
-            <div class="col-4">
-                <div class="fcbtn">
-                <button type="button" class="btn btn-primary" id="faren">F</button>
-                <button type="button" class="btn btn-primary active" id="celsius">C</button>
+            <div class="row">
+                <div class="col-4">
+                    <img src="img/sunny.png" alt="" width="190" height="190" class="bigicon">
                 </div>
-                <h2 class="info">
-                    Real Feel: <span id="real-temp">22°C</span>  <br/>
-                    Humidity: <span id= "humidity">66%</span>
-                </h2>
-            </div>
-        </div>    
-    </div>
-    <div class ="source-code"> 
-        <a  href="https://github.com/elzagwong/shecodes-weather-app" target="_blank">Open-source code</a> by Elsa W
+                <div class="col-4">
+                    <h1 class="city" id="search-input-city">
+                        Rome 
+                    </h1>
+                    <h2 class="datetime" id="h2date-time">
+                        Sunday 11:27
+                    </h2>
+                    <h2 class="current" id="main-current-temp">
+                        21°C
+                    </h2>
+                    <h3 class="maxmin" id="main-maxmin">
+                        <span id="current-max">28°</span>/<span id="current-min">14°</span>
+                    </h3>
+                </div>
+                <div class="col-4">
+                    <div class="fcbtn">
+                    <button type="button" class="btn btn-primary" id="faren">F</button>
+                    <button type="button" class="btn btn-primary active" id="celsius">C</button>
+                    </div>
+                    <h2 class="info">
+                        Real Feel: <span id="real-temp">22°C</span>  <br/>
+                        Humidity: <span id= "humidity">66%</span>
+                    </h2>
+                </div>
+            </div>    
+        </div>
+        <div class ="source-code"> 
+            <a  href="https://github.com/elzagwong/shecodes-weather-app" target="_blank">Open-source code</a> by Elsa W
 
+        </div>
     </div>
-    
 <script src="src/app.js"></script>
 </body>
 </html>
