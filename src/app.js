@@ -41,11 +41,14 @@ function showWeather(response) {
 
   let dateElement = document.querySelector("#date-time");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  
+
+  let iconElement = document.querySelector("#weather-icon")
+  let weatherIcon = response.data.weather[0].icon
+  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`)
 }
 
 
-let city = "Choluteca"
+let city = "Lima"
 let apiKey = "f16cae8dd5b86ff5840e0c571a06e631";
 let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
