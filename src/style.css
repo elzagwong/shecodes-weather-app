@@ -19,23 +19,21 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-.btnsearch {
+ .btnsearch {
     position: relative;
-    left: 420px;
-    bottom: 55px;
-    /* background-color: #151761;
-    border-color: #151761; */
+    left: 245px;
+    bottom: 38px;
+
     
 }
 
 .search-location {
     position: relative;
-    left: 420px;
-    bottom: 55px;
-    font-weight: 300;
-    /* background-color: #151761;
-    border-color: #151761;  */
+    left: 245px;
+    bottom: 38px;
+    font-weight: 200;
 }
+
 
 .bigicon {
     display: block;
