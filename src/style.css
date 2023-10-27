@@ -1,15 +1,18 @@
+body {
+font-family: 'Montserrat', sans-serif;
+}
 
 .container {
-    background-image: url(https://img.freepik.com/free-photo/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1092.jpg?w=1380&t=st=1696160466~exp=1696161066~hmac=3e8c1ca875591e1c930ef4b220f0590cc941ece0786c3f07f82f845bd8f2616c);
+    margin: 0 auto;
+    margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 20px;
+    border: 1px solid gray;
+    max-width: 800px;
 
 }
 
-h1,h2,h3 {
-font-family: 'Montserrat', sans-serif;
-}
 
 #btnsearch {
     position: relative;
@@ -37,7 +40,7 @@ font-family: 'Montserrat', sans-serif;
 .city {
     text-align: center;
     font-weight: 800;
-    font-size: 80px;
+    font-size: 60px;
 }
 
 .datetime {
@@ -73,7 +76,7 @@ font-family: 'Montserrat', sans-serif;
 
 .info  {
     margin-top: 130px;
-    font-size: 27px;
+    font-size: 20px;
 }
 
 .fcbtn {
