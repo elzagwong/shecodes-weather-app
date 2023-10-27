@@ -19,7 +19,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-#btnsearch {
+.btnsearch {
     position: relative;
     left: 420px;
     bottom: 55px;
@@ -28,7 +28,7 @@ font-family: 'Montserrat', sans-serif;
     
 }
 
-#search-location {
+.search-location {
     position: relative;
     left: 420px;
     bottom: 55px;
