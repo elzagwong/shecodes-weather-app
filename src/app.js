@@ -47,10 +47,31 @@ function showWeather(response) {
   iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`)
 }
 
+function searchCity(city) {
+
+  let apiKey = "f16cae8dd5b86ff5840e0c571a06e631";
+  let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showWeather)
+
+}
+
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let inputElement = document.querySelector("#search-city");
+  searchCity(inputElement.value);
+  
+}
 
 let city = "Lima"
 let apiKey = "f16cae8dd5b86ff5840e0c571a06e631";
 let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showWeather)
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
 
