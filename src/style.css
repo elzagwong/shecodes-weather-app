@@ -69,13 +69,6 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-.col-2 {
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 3px;
-    background-color: rgb(214, 231, 236,0.4);
-   
-}
 
 .day {
     font-size: 40px;
@@ -90,6 +83,28 @@ font-family: 'Montserrat', sans-serif;
 .fcbtn {
     position: relative;
     top: 70px;
-
+    
 }
 
+.col-2 {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    background-color: rgb(214, 231, 236,0.4);
+   
+}
+
+.forecast-day {
+    
+    font-size: 18px;
+    font-weight:800;
+}
+
+.forecast-max-min {
+
+    font-size: 14px;
+}
+
+.forecast-max {
+    font-weight: 600;
+}
