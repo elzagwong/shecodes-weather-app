@@ -108,3 +108,22 @@ font-family: 'Montserrat', sans-serif;
 .forecast-max {
     font-weight: 600;
 }
+
+.weather-forecast {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.weather-forecast-days {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(214, 231, 236,0.4);
+    border-color: black;
+    border-radius: 10px;
+    margin: 3px;
+
+}

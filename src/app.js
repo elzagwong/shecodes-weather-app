@@ -117,13 +117,13 @@ function convertCelsius(event) {
 
 
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast-grid");
+  let forecastElement = document.querySelector("#forecast");
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHTML = "";
 
   days.forEach(function (day) {
-    forecastHTML = forecastHTML + `<div class="weather-forecast-days">
+    forecastHTML = forecastHTML + `<div class="weather-forecast-days" style="width: 100%">
             <div class="forecast-day">${day}</div>
             <div class="forecast-icon">☔</div>
             <div class = "forecast-max-min">
