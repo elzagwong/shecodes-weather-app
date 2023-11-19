@@ -8,9 +8,9 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`
   };
 
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  let day = days[date.getDay()];
-  return `${day} ${hour}:${minutes}`;
+  let daysWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let weekday = daysWeek[date.getDay()];
+  return `${weekday} ${hour}:${minutes}`;
 
 
 }
@@ -116,7 +116,28 @@ function convertCelsius(event) {
 }
 
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-grid");
 
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML + `<div class="weather-forecast-days">
+            <div class="forecast-day">${day}</div>
+            <div class="forecast-icon">☔</div>
+            <div class = "forecast-max-min">
+                <span class="forecast-max">29°</span>
+                /
+                <span class="forecast-min ">22°</span>
+            </div>
+        </div>
+
+      `;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
 
 let celsiusTemperature = null; //keeps track of celsius temperature and stores it to be used later
 let celsiusRealFeel = null;
@@ -134,6 +155,17 @@ celsiusElement.addEventListener("click", convertCelsius)
 
 
 searchCity("Milan");
+displayForecast();
 
 
-
+// let forecast = document.querySelector("forecast");
+// forecast.innerHTML =`
+// <div class="weather-forecast-days">
+//     <div class="forecast-day">Sat</div>
+//     <div class="forecast-icon">🌪</div>
+//     <div class = "forecast-max-min">
+//         <span class="forecast-max">29°</span>
+//         /
+//         <span class="forecast-min ">22°</span>
+//     </div>
+// </div>`
