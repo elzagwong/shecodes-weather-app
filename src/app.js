@@ -18,48 +18,51 @@ function formatDate(timestamp) {
 
 function showWeather(response) {
   let temperatureElement = document.querySelector("#main-current-temp");
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#search-input-city");
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = `${temperature}°C `;
-  celsiusTemperature =Math.round(response.data.main.temp);
+  celsiusTemperature =Math.round(response.data.temperature.current);
   
   let currentHumidity = document.querySelector("#humidity");
-  let humid = Math.round(response.data.main.humidity);
+  let humid = Math.round(response.data.temperature.humidity);
   currentHumidity.innerHTML = `${humid}%`;
   
   
   let currentRealFeel = document.querySelector("#real-temp");
-  let realFeel = Math.round(response.data.main.feels_like);
+  let realFeel = Math.round(response.data.temperature.feels_like);
   currentRealFeel.innerHTML = `${realFeel}°C `;
-  celsiusRealFeel = Math.round(response.data.main.feels_like);
+  celsiusRealFeel = Math.round(response.data.temperature.feels_like);
+
   
-  let currentMaxTemp = document.querySelector("#current-max");
-  let tempMax = Math.round(response.data.main.temp_max);
-  currentMaxTemp.innerHTML = `${tempMax}°C `;
-  celsiusMaxTemp = Math.round(response.data.main.temp_max);
+  // let currentMaxTemp = document.querySelector("#current-max");
+  // let tempMax = Math.round(response.data.main.temp_max);
+  // currentMaxTemp.innerHTML = `${tempMax}°C `;
+  // celsiusMaxTemp = Math.round(response.data.main.temp_max);
   
-  let currentMinTemp = document.querySelector("#current-min");
-  let tempMin = Math.round(response.data.main.temp_min);
-  currentMinTemp.innerHTML = `${tempMin}°C `;
-  celsiusMinTemp = Math.round(response.data.main.temp_min);
+  // let currentMinTemp = document.querySelector("#current-min");
+  // let tempMin = Math.round(response.data.main.temp_min);
+  // currentMinTemp.innerHTML = `${tempMin}°C `;
+  // celsiusMinTemp = Math.round(response.data.main.temp_min);
 
   let dateElement = document.querySelector("#date-time");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
 
   let iconElement = document.querySelector("#weather-icon")
-  let weatherIcon = response.data.weather[0].icon
-  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`)
+  let weatherIcon = response.data.condition.icon
+  iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weatherIcon}.png`)
 
 
-  getForecast(response.data.city);
+
+ getForecast(response.data.city)
+
 }
 
 function searchCity(city) {
 
-  let apiKey = "f16cae8dd5b86ff5840e0c571a06e631";
-  let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+  let apiKey = "32464c0t915a235858a6af28ccbb4oa0";
+  let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  //console.log(apiUrl)
   axios.get(apiUrl).then(showWeather)
 
 }
@@ -83,13 +86,13 @@ function convertFarenheit(event) {
   let farenheitRealFeel = Math.round((celsiusRealFeel * 9)/5 + 32);
   currentRealFeel.innerHTML = `${farenheitRealFeel}°F `;
 
-  let currentMaxTemp = document.querySelector("#current-max");
-  let farenheitMaxTemp = Math.round((celsiusMaxTemp * 9)/5 + 32);
-  currentMaxTemp.innerHTML = `${farenheitMaxTemp}°F `;
+  // let currentMaxTemp = document.querySelector("#current-max");
+  // let farenheitMaxTemp = Math.round((celsiusMaxTemp * 9)/5 + 32);
+  // currentMaxTemp.innerHTML = `${farenheitMaxTemp}°F `;
   
-  let currentMinTemp = document.querySelector("#current-min");
-  let farenheitMinTemp = Math.round((celsiusMinTemp * 9)/5 + 32);
-  currentMinTemp.innerHTML = `${farenheitMinTemp}°F `;
+  // let currentMinTemp = document.querySelector("#current-min");
+  // let farenheitMinTemp = Math.round((celsiusMinTemp * 9)/5 + 32);
+  // currentMinTemp.innerHTML = `${farenheitMinTemp}°F `;
 
 
 
@@ -107,53 +110,62 @@ function convertCelsius(event) {
   let currentRealFeel = document.querySelector("#real-temp");
   currentRealFeel.innerHTML = `${Math.round(celsiusRealFeel)}°C `;
 
-  let currentMaxTemp = document.querySelector("#current-max");
-  currentMaxTemp.innerHTML = `${Math.round(celsiusMaxTemp)}°C `;
+  // let currentMaxTemp = document.querySelector("#current-max");
+  // currentMaxTemp.innerHTML = `${Math.round(celsiusMaxTemp)}°C `;
   
-  let currentMinTemp = document.querySelector("#current-min");
-  currentMinTemp.innerHTML = `${Math.round(celsiusMinTemp)}°C `;
+  // let currentMinTemp = document.querySelector("#current-min");
+  // currentMinTemp.innerHTML = `${Math.round(celsiusMinTemp)}°C `;
 
   farenheitElement.classList.remove("active");
   celsiusElement.classList.add("active");
 
 }
 
+function forecastDate(timestamp) {
 
-function displayForecast() {
+  let date = new Date(timestamp *1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+
+}
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  //let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]; 
   let forecastHTML = "";
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day,index) {
+    if (index < 6) {
     forecastHTML = forecastHTML + `<div class="weather-forecast-days" style="width: 100%">
-            <div class="forecast-day">${day}</div>
-            <div class="forecast-icon">☔</div>
+            <div class="forecast-day">${forecastDate(day.time)}</div>
+              <img src="${day.condition.icon_url}" class="forecast-icon"/>
             <div class = "forecast-max-min">
-                <span class="forecast-max">29°</span>
+                <span class="forecast-max">${Math.round(day.temperature.maximum)}°</span>
                 /
-                <span class="forecast-min ">22°</span>
+                <span class="forecast-min ">${Math.round(day.temperature.minimum)}°</span>
             </div>
         </div>
 
       `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(city) {
-  let apiKey = "f16cae8dd5b86ff5840e0c571a06e631";
-  let apiUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely,alerts&appid=${apiKey}&units=metric`;
-  //console.log(apiUrl);
+function getForecast(cityElement) {
+  let apiKey = "32464c0t915a235858a6af28ccbb4oa0";
+  let apiUrl= `https://api.shecodes.io/weather/v1/forecast?query=${cityElement}&key=${apiKey}&units=metric`;
+
+  console.log(apiUrl);
 
   axios.get(apiUrl).then(displayForecast)
 
 }
 
-function displayForecast(response) {
-  console.log(response.data)
-}
+
 
 let celsiusTemperature = null; //keeps track of celsius temperature and stores it to be used later
 let celsiusRealFeel = null;
@@ -170,6 +182,6 @@ let celsiusElement = document.querySelector("#display-celsius")
 celsiusElement.addEventListener("click", convertCelsius)
 
 
-searchCity("Milan");
+searchCity("Bologna");
 //getForecast();
 

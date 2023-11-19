@@ -59,7 +59,7 @@ font-family: 'Montserrat', sans-serif;
 
 .current-temp {
     text-align: center;
-    font-size: 35px;
+    font-size: 55px;
     font-weight: 800;
 }
 
@@ -125,4 +125,10 @@ font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
     margin: 3px;
 
+}
+
+.forecast-icon {
+
+    width: 85px;
+    height: 85px;;
 }
