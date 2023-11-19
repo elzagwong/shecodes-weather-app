@@ -111,9 +111,8 @@ font-family: 'Montserrat', sans-serif;
 
 .weather-forecast {
     display: flex;
-    justify-content: center;
     width: 100%;
-    margin: 0 auto;
+    margin-top: 5px;
 }
 
 .weather-forecast-days {

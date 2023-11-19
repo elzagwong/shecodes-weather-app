@@ -50,6 +50,9 @@ function showWeather(response) {
   let iconElement = document.querySelector("#weather-icon")
   let weatherIcon = response.data.weather[0].icon
   iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`)
+
+
+  getForecast(response.data.city);
 }
 
 function searchCity(city) {
@@ -139,6 +142,19 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(city) {
+  let apiKey = "f16cae8dd5b86ff5840e0c571a06e631";
+  let apiUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely,alerts&appid=${apiKey}&units=metric`;
+  //console.log(apiUrl);
+
+  axios.get(apiUrl).then(displayForecast)
+
+}
+
+function displayForecast(response) {
+  console.log(response.data)
+}
+
 let celsiusTemperature = null; //keeps track of celsius temperature and stores it to be used later
 let celsiusRealFeel = null;
 let celsiusMaxTemp=null;
@@ -155,17 +171,5 @@ celsiusElement.addEventListener("click", convertCelsius)
 
 
 searchCity("Milan");
-displayForecast();
+//getForecast();
 
-
-// let forecast = document.querySelector("forecast");
-// forecast.innerHTML =`
-// <div class="weather-forecast-days">
-//     <div class="forecast-day">Sat</div>
-//     <div class="forecast-icon">🌪</div>
-//     <div class = "forecast-max-min">
-//         <span class="forecast-max">29°</span>
-//         /
-//         <span class="forecast-min ">22°</span>
-//     </div>
-// </div>`
