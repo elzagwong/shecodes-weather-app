@@ -62,7 +62,7 @@ function searchCity(city) {
 
   let apiKey = "32464c0t915a235858a6af28ccbb4oa0";
   let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  //console.log(apiUrl)
+
   axios.get(apiUrl).then(showWeather)
 
 }
@@ -133,7 +133,7 @@ function forecastDate(timestamp) {
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  //let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]; 
+
   let forecastHTML = "";
 
   response.data.daily.forEach(function (day,index) {
@@ -183,5 +183,5 @@ celsiusElement.addEventListener("click", convertCelsius)
 
 
 searchCity("Bologna");
-//getForecast();
+
 

@@ -1,5 +1,7 @@
 body {
 font-family: 'Montserrat', sans-serif;
+background-image: url("");
+background-repeat: no-repeat;
 }
 
 
@@ -10,14 +12,19 @@ font-family: 'Montserrat', sans-serif;
 .container-wrapper {
     margin: 0 auto;
     max-width: 800px;
+    
+   
 
 }
+
 .container {
-    margin-top: 30px;
+    margin-top: 90px;
     padding-top: 30px;
     padding-bottom: 30px;
-    border-radius: 5px;
-    border: 1px solid gray;
+    border-radius: 8px;
+    background-color:rgb(214, 216, 217, 0.8);
+
+ 
 
 }
 
@@ -120,11 +127,18 @@ font-family: 'Montserrat', sans-serif;
     align-items: center;
     width: 100%;
     flex-direction: column;
-    background-color: rgb(214, 231, 236,0.4);
+    background-color: rgb(79, 137, 154,0.4);
     border-color: black;
     border-radius: 10px;
     margin: 3px;
 
+}
+
+.weather-forecast-days:hover {
+    background-color: white;
+    border-color: black;
+    box-shadow: 5px 5px 8px;
+    
 }
 
 .forecast-icon {
