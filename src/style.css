@@ -1,6 +1,9 @@
 body {
 font-family: 'Montserrat', sans-serif;
-background-image: url("");
+background-image: url('/img/pexels-bri-schneiter-346529_16x9.png');
+background-size: cover;
+  height: 100%;
+  overflow: hidden;
 background-repeat: no-repeat;
 }
 
@@ -109,7 +112,7 @@ background-repeat: no-repeat;
 
 .forecast-max-min {
 
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .forecast-max {
@@ -145,4 +148,12 @@ background-repeat: no-repeat;
 
     width: 85px;
     height: 85px;;
+}
+
+.source-code {
+    color: white;
+}
+
+.source-code a {
+    color: white;
 }
