@@ -34,6 +34,9 @@ function showWeather(response) {
   currentRealFeel.innerHTML = `${realFeel}°C `;
   celsiusRealFeel = Math.round(response.data.temperature.feels_like);
 
+ 
+  farenheitElement.classList.remove("active");
+  celsiusElement.classList.add("active");
   
   // let currentMaxTemp = document.querySelector("#current-max");
   // let tempMax = Math.round(response.data.main.temp_max);
